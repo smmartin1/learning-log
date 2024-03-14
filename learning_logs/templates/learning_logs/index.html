@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Shannon Martin">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        
+        <title>Learning Log</title>
+    </head>
+
+    <body>
+        {% extends 'learning_logs/base.html' %}
+
+        {% block page_header %}
+            <div class="p-3 rounded-3" id="jumbotron">
+                <div class="container-fluid py-4">
+                    <h1 class="display-5">Track your learning</h1>
+
+                    <p class="lead" id="landing">
+                        Make your own learning log and keep a list of the topics you're learning about.
+                        When you learned something new about a topic, summarize what you learned by making an entry.
+                    </p>
+
+                    {% if user.is_authenticated %}
+                        <div id="jumbotron-continue-btn">
+                            <a class="btn btn-primary btn-lg" id="continue-btn" href="{% url 'learning_logs:topics' %}">Topics</a>
+                        </div>
+                    {% else %}
+                        <div id="jumbotron-btn">
+                            <a class="btn btn-primary btn-lg" id="login-btn" href="{% url 'accounts:login' %}">Login</a>
+                            <a class="btn btn-secondary btn-lg" id="register-btn" href="{% url 'accounts:register' %}">Register</a>
+                        </div>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        {% endblock page_header %}
+    </body>
+</html>

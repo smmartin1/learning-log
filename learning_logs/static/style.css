@@ -1,0 +1,121 @@
+body {
+    background-color: #D9F2FA;
+}
+
+h1 {
+	text-align: center;
+	text-decoration: underline;
+}
+
+#navi {
+    height: 70px;
+    border-bottom-style: dashed;
+    border-width: 3px;
+    border-color: #3BB9E3;
+}
+
+#jumbotron {
+    margin-top: 50px;
+    background-color: #CADFFA;
+    box-shadow: 10px 10px 10px #7BB4C7;
+}
+
+#jumbotron-btn {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#jumbotron-continue-btn {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#landing {
+	margin-top: 35px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul.topics-list {
+    grid-template-columns: 200px 200px 200px 200px 200px;
+	display: grid;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+    margin-top: 20px;
+}
+
+.empty-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (max-width: 1000px) {
+	ul.topics-list {
+	  grid-template-columns: 200px 200px 200px 200px;
+	}
+}
+
+@media (max-width: 800px) {
+	ul.topics-list {
+	  grid-template-columns: 200px 200px 200px;
+	}
+}
+
+@media (max-width: 720px) {
+	ul.topics-list {
+	  grid-template-columns: 300px 300px;
+	}
+}
+
+@media (max-width: 600px) {
+	ul.topics-list {
+	  grid-template-columns: 300px;
+	}
+}
+
+#new-entry, #topic-add, #register-btn, #back-btn {
+    background-color: #96A3FA;
+	border-style: none;
+}
+
+#new-btn {
+	margin: 15px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#topic-select, #edit-entry, #login-btn, #reg-btn, #continue-btn {
+	background-color: #6876D4;
+	border-style: none;
+}
+
+#save-btn, #add-entry-btn, #add-topic-btn {
+	background-color: #6876D4;
+	border-style: none;
+	float: right;
+}
+
+#card-whole {
+    box-shadow: 5px 5px 5px #96A3FA;
+}
+
+#card-header {
+    background-color: #D9DDFA;
+}
+
+#card-body {
+    background-color: #D9E8FA;
+}

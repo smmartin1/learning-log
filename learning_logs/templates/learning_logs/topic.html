@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Shannon Martin">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <title>Learning Log</title>
+    </head>
+
+    <body>
+        {% extends 'learning_logs/base.html' %}
+        
+        {% block page_header %}
+            <h1>{{ topic.text }}</h1>
+        {% endblock page_header %}
+        
+        {% block content %}
+            <div id="new-btn">
+                <a id="new-entry" class="btn btn-secondary btn-md mb-3 border-0" href="{% url 'learning_logs:new_entry' topic.id %}">Add new entry</a>
+            </div>
+            {% for entry in entries %}
+                <div id="card-whole" class="card mb-4 border-0 rounded-3">
+                    <h4 class="card-header" id="card-header">
+                        {{ entry.date_added|date:'M d, Y H:i' }}
+                        <div  style="float: right;">
+                            <a id="edit-entry" class="btn btn-secondary btn-sm justify-content-end border-0" href="{% url 'learning_logs:edit_entry' entry.id%}">Edit Entry</a>
+                        </div>
+                    </h4>
+                    
+                    <div class="card-body" id="card-body">{{ entry.text }}</div>
+                </div>
+            {% empty %}
+                <p style="text-align: center;">No entries for this topic have been added</p>
+            {% endfor %}
+        {% endblock content %}
+    </body>
+</html>
